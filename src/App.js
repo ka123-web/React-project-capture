@@ -1,4 +1,5 @@
 import React from 'react';
+import {AnimatePresence} from 'framer-motion';
 
 //Global Style
 import GlobalStyle from './components/GlobalStyle';
@@ -9,10 +10,13 @@ import OurWork from './Pages/OurWork';
 import Nav from './components/Nav';
 import MovieDetails from './components/MovieDetails';
 
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, useLocation} from 'react-router-dom';
 function App() {
+  const location = useLocation();
+  console.log(location);
   return (
-    <Switch>
+    <AnimatePresence exitBeforeEnter>
+    <Switch location={location} key={location.pathname}>
         <div className="App">
           <GlobalStyle/>
           <Nav/>
@@ -22,6 +26,7 @@ function App() {
           <Route  path="/OurWork/:id" component={MovieDetails}/>
         </div>
       </Switch>
+      </AnimatePresence>
     
   );
 }

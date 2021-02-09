@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {useHistory,Link} from 'react-router-dom';
 import {MovieState} from '../MovieState';
 import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import {pageAnimation} from '../Pages/Animation';
 
 const MovieDetails = () =>
 {
@@ -18,7 +20,7 @@ const MovieDetails = () =>
     return(
     <>
     {movie && (
-        <Details>
+        <Details exit="exit" variants={pageAnimation} initial="hidden" animate="show">
             <HeadLines>
                     <h1>{movie.title}</h1>
                     <img src ={movie.mainImg} alt="main image"/>
@@ -42,7 +44,7 @@ const MovieDetails = () =>
     )
 }
 
-const Details = styled.div`
+const Details = styled(motion.div)`
 color:white;
 `;
 const HeadLines = styled.div`

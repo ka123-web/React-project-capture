@@ -1,43 +1,45 @@
-import React from 'react';
+import React,{useState} from 'react';
 import  styled from 'styled-components';
 import {About} from '../components/style';
+import Toggle from '../components/Toggle';
+import {AnimateSharedLayout} from 'framer-motion';
+
 
 const FAQSection = () =>
 {
+    const [faqToggle,setfaqToggle] = useState(false);
     return(
         <Faq>
             <h2> Any Questions <span>FAQ</span></h2>
-            <div className="question">
-                <h4>How do i start</h4>
+            <AnimateSharedLayout>
+            <Toggle title="How do i start">
                 <div className="answer">
                     <p>this is a random text</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-
-            <div className="question">
-                <h4>Daily schedule</h4>
+            
+            </Toggle>
+            <Toggle title="Daily schedule">
+           
                 <div className="answer">
                     <p>this is a random text</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-
-            <div className="question">
-                <h4>Different payment method</h4>
+           
+            </Toggle>
+            <Toggle title="Different payment method">
+           
                 <div className="answer">
                     <p>this is a random text</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-
-            <div className="question">
-                <h4>what products do you use</h4>
+            
+            </Toggle>
+            <Toggle title="what products do you use">
+           
                 <div className="answer">
                     <p>this is a random text</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
+            
+            </Toggle>
+            </AnimateSharedLayout>
         </Faq>
 
     )
@@ -53,8 +55,8 @@ h2{
 }
 .faq-line{
     background: #cccccc;
-    height: 0.2 rem;
-    margin:2rem 0 rem;
+    height: 0.2rem;
+    margin:2rem 0rem;
     width:100%;
 
 }
@@ -65,7 +67,7 @@ h2{
 .answer{
     padding: 2rem 0rem;
     p{
-        padding:1 rem 0rem;
+        padding:1rem 0rem;
     }
 }
 `;
