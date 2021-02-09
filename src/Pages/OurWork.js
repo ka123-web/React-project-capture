@@ -8,10 +8,17 @@ import {motion} from 'framer-motion';
 import {pageAnimation,fade,photoAnimation,lineAnimation,slider,sliderContainer} from './Animation';
 
 
+
 const ourWork =()=>
 {
+  
     return(
-        <Work exit="exit" variants={pageAnimation} initial="hidden" animate="show">
+        <Work 
+        style = {{background:"#fff"}} 
+        exit="exit" 
+        variants={pageAnimation} 
+        initial="hidden" 
+        animate="show">
            <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
@@ -74,9 +81,9 @@ overflow:hidden;
 const Frame1 = styled(motion.div)`
 position:fixed;
 left:0;
-top:10%;
+top:0;
 width:100%;
-height:100vh;
+height:100%;
 background:#fffebf;
 z-index:2;
 
